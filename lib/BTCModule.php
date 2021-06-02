@@ -1,14 +1,14 @@
 <?php 
 
-namespace DOGECModule;
+namespace BTCModule;
 
 use GuzzleHttp\Client;
 
-class DOGECModule{
+class BTCModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://explorer.dogec.io/api/v1/";
+        $this->explorer_url = "https://btc.flitswallet.app/api/v1/";
         $this->client = new client();
     }
 

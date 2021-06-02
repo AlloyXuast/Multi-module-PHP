@@ -1,6 +1,6 @@
 {
-    "name": "weoka/dogec-module",
-    "description": "DogeCash package for the Buy Bridge",
+    "name": "weoka/btc-module",
+    "description": "Bitcoin coin package for the Buy Bridge",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-          "DOGECModule\\": "lib/"
+          "BTCModule\\": "lib/"
         }
     }
 }
