@@ -23,7 +23,11 @@
           "StakecubeModule\\": "lib/",
           "FLSModule\\": "lib/",
           "PIVXModule\\": "lib/",
-          "ETHModule\\": "lib/"
+          "ETHModule\\": "lib/",
+          "LTCModule\\": "lib/",
+          "DOGEModule\\": "lib/",
+          "DGBModule\\": "lib/",
+          "DASHModule\\": "lib/"
         }
     }
 }
