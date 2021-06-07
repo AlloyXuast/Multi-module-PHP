@@ -22,6 +22,7 @@
           "DOGECModule\\": "lib/",
           "StakecubeModule\\": "lib/",
           "FLSModule\\": "lib/",
+          "PIVXModule\\": "lib/",
           "ETHModule\\": "lib/"
         }
     }
