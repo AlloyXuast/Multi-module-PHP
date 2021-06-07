@@ -27,7 +27,8 @@
           "LTCModule\\": "lib/",
           "DOGEModule\\": "lib/",
           "DGBModule\\": "lib/",
-          "DASHModule\\": "lib/"
+          "DASHModule\\": "lib/",
+          "ZNZModule\\": "lib/"
         }
     }
 }
