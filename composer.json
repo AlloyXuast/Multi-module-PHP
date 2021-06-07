@@ -1,12 +1,16 @@
 {
-    "name": "weoka/btc-module",
-    "description": "Bitcoin coin package for the Buy Bridge",
+    "name": "ChisdealHDYT/Cryptos-module",
+    "description": "Multi Crypto Gateways package for the Buy Bridge using Explorer Nodes",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Weoka",
             "email": "daniel@weoka.pro"
+        },
+        {
+            "name": "ChisdealHDYT",
+            "email": "chisdealhdyt@chisdealhd.co.uk"
         }
     ],
     "require": {
