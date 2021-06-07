@@ -20,7 +20,9 @@
         "psr-4": {
           "BTCModule\\": "lib/",
           "DOGECModule\\": "lib/",
-          "StakecubeModule\\": "lib/"
+          "StakecubeModule\\": "lib/",
+          "FLSModule\\": "lib/",
+          "ETHModule\\": "lib/"
         }
     }
 }
