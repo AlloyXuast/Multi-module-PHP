@@ -13,4 +13,6 @@ use DOGECModule\DOGECModule;
 
 $dogec = new DOGECModule();
 
-var_dump($dogec->existsTransaction('DOGECASHWALLETADDRESS', AMOUNT, CORRENT_TIMESTAMP));```
+var_dump($dogec->existsTransaction('DOGECASHWALLETADDRESS', AMOUNT, CORRENT_TIMESTAMP));
+
+```
