@@ -3,12 +3,14 @@ Multi Crypto package for the Buy Bridge using All in 1 System, Easy install incl
 
 Example Code:
 
-> <?php
+```php
 
-> require_once('vendor/autoload.php');
+<?php
 
-> use DOGECModule\DOGECModule;
+require_once('vendor/autoload.php');
 
-> $dogec = new DOGECModule();
+use DOGECModule\DOGECModule;
 
->var_dump($dogec->existsTransaction('DOGECASHWALLETADDRESS', AMOUNT, CORRENT_TIMESTAMP));
+$dogec = new DOGECModule();
+
+var_dump($dogec->existsTransaction('DOGECASHWALLETADDRESS', AMOUNT, CORRENT_TIMESTAMP));```
