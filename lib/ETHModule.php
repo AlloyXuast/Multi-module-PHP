@@ -96,7 +96,7 @@ class ETHModule{
             $transactions = $this->client->request('GET', $addressEndpoint);
 
             //convert response into array
-            $transactions_array = (json_decode($transactions->getBody()->getContents(), true))['transactions'];
+            $transactions_array = (json_decode($transactions->getBody()->getContents(), true))['txids'];
             return $transactions_array;
         }
         catch (\Throwable $e){
