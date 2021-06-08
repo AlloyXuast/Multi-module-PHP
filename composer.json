@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-           "Payments\\": "lib/crypto/"
+           "Payments\\": "lib/"
         }
     }
 }
