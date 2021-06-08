@@ -87,6 +87,7 @@ class ENJModule{
         }
     }
 
+    
     //
     //Get trasnsaction
     //
