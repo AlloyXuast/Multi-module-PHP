@@ -8,7 +8,7 @@
 !LICENSE
 
 # Whitelist library code
-!lib/
+!CryptoPayments/
 
 # Macos shitty files
 .DS_Store
