@@ -1,6 +1,6 @@
 <?php 
 
-namespace BTCModule;
+namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
