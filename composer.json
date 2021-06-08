@@ -28,6 +28,7 @@
           "DOGEModule\\": "lib/",
           "DGBModule\\": "lib/",
           "DASHModule\\": "lib/",
+          "ENJModule\\": "lib/",
           "ZNZModule\\": "lib/"
         }
     }
