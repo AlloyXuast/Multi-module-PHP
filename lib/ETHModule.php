@@ -15,7 +15,7 @@ class ETHModule{
     //
     // Look in the explorer if a newer transaction than $timestap in ms (int) with $amount (Float) exists for $address (varchar)
     //
-    public function existsTransaction($address, $amount, $timestamp)
+    public function existsTransaction($address, $amount, $timestamp, $erc20, $tokenname)
     {
         try{
             $transactions = $this->getAddressTransactions($address);
@@ -34,15 +34,33 @@ class ETHModule{
                     ];
                 }
 
-                foreach($transaction_info['vout'] as $vout)
-                {
-                    if($vout['value'] == $amount && $vout['scriptPubKey']['addresses'][0] == $address)
+                if ($erc20 == true) {
+                    
+                    foreach($transaction_info['tokenTransfers'] as $tokenTransfers)
                     {
-                        return [
-                            'exists' => true,
-                            'txid' => $transaction
-                        ];
+                        $formattedamount = str_replace(',000', '', number_format($tokenTransfers['value'], 0, '.', ','));
+                        if($tokenTransfers['value'] == $amount && $tokenTransfers['symbol'] == $tokenname)
+                        {
+                            return [
+                                'exists' => true,
+                                'txid' => $transaction
+                            ];
+                        }
                     }
+                    
+                } else {
+                
+                    foreach($transaction_info['vout'] as $vout)
+                    {
+                        if($vout['value'] == $amount && $vout['scriptPubKey']['addresses'][0] == $address)
+                        {
+                            return [
+                                'exists' => true,
+                                'txid' => $transaction
+                            ];
+                        }
+                    }
+                    
                 }
             }
 
