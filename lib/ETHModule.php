@@ -20,6 +20,10 @@ class ETHModule{
         try{
             $transactions = $this->getAddressTransactions($address);
 
+            function toFixed($number, $decimals) {
+               return number_format($number, $decimals, '.', "");
+            }
+            
             foreach($transactions as $transaction)
             {
                 $transaction_info = $this->getTransaction($transaction);
@@ -38,7 +42,17 @@ class ETHModule{
                     
                     foreach($transaction_info['tokenTransfers'] as $tokenTransfers)
                     {
-                        $formattedamount = str_replace(',000', '', number_format($tokenTransfers['value'], 0, '.', ','));
+
+                        if (toFixed(($tokenTransfers['value'] / "1000000000000000000"), 0) == $amount) {
+
+	                        $formattedamount = toFixed(($tokenTransfers['value'] / "1000000000000000000"), 0);
+	
+                        } else {
+
+	                        $formattedamount = toFixed(($tokenTransfers['value'] / "1000000000000000000"), 5);
+	
+                        }
+                        
                         if($formattedamount == $amount && $tokenTransfers['symbol'] == $tokenname)
                         {
                             return [
