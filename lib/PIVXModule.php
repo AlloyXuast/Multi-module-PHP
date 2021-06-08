@@ -1,6 +1,6 @@
 <?php 
 
-namespace PIVXModule;
+namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
