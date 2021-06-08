@@ -1,6 +1,6 @@
 <?php 
 
-namespace DASHModule;
+namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
