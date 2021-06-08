@@ -1,10 +1,10 @@
 <?php 
 
-namespace ENJModule;
+namespace ENJINModule;
 
 use GuzzleHttp\Client;
 
-class ENJModule{
+class ENJINModule{
     
     public function __construct()
     {
