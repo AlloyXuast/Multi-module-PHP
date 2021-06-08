@@ -36,7 +36,8 @@ class ENJModule{
 
                 foreach($transaction_info['tokenTransfers'] as $tokenTransfers)
                 {
-                    if($tokenTransfers['value'] == $amount && $tokenTransfers['symbol'] == "ENJ")
+                    $formattedamount = str_replace(',000', '', number_format($tokenTransfers['value'], 0, '.', ','));
+                    if($formattedamount == $amount && $tokenTransfers['symbol'] == "ENJ")
                     {
                         return [
                             'exists' => true,
