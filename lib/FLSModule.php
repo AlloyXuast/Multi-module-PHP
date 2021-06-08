@@ -1,6 +1,6 @@
 <?php 
 
-namespace FLSModule;
+namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
