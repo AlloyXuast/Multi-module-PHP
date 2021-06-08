@@ -1,6 +1,6 @@
 <?php 
 
-namespace LTCModule;
+namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
