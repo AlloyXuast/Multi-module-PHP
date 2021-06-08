@@ -8,7 +8,7 @@ class ETHModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://eth.flitswallet.app/api/v1/";
+        $this->explorer_url = "https://eth.flitswallet.app/api/";
         $this->client = new client();
     }
 
