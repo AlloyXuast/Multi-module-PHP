@@ -1,6 +1,6 @@
 <?php
 
-namespace StakecubeModule;
+namespace Payments\Crypto;
 
 require_once('vendor/autoload.php');
 
