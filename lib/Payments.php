@@ -4,7 +4,7 @@ namespace Payments;
 
 use GuzzleHttp\Client;
 
-class Payments\ETHModule{
+class ETHModule{
     
     public function __construct()
     {
