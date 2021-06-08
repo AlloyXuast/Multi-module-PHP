@@ -39,7 +39,7 @@ class ETHModule{
                     foreach($transaction_info['tokenTransfers'] as $tokenTransfers)
                     {
                         $formattedamount = str_replace(',000', '', number_format($tokenTransfers['value'], 0, '.', ','));
-                        if($tokenTransfers['value'] == $amount && $tokenTransfers['symbol'] == $tokenname)
+                        if($formattedamount == $amount && $tokenTransfers['symbol'] == $tokenname)
                         {
                             return [
                                 'exists' => true,
