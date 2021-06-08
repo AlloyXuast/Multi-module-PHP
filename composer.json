@@ -18,18 +18,6 @@
     },
     "autoload": {
         "psr-4": {
-          //"BTCModule\\": "lib/",
-          //"DOGECModule\\": "lib/",
-          //"StakecubeModule\\": "lib/",
-          //"FLSModule\\": "lib/",
-          //"PIVXModule\\": "lib/",
-          //"ETHModule\\": "lib/",
-          //"LTCModule\\": "lib/",
-          //"DOGEModule\\": "lib/",
-          //"DGBModule\\": "lib/",
-          //"DASHModule\\": "lib/",
-          //"ENJINModule\\": "lib/",
-          //"ZNZModule\\": "lib/"
            "Payments\\": "lib/"
         }
     }
