@@ -1,6 +1,6 @@
 <?php 
 
-namespace DOGECModule;
+namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
