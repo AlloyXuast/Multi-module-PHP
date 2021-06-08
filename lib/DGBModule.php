@@ -1,6 +1,6 @@
 <?php 
 
-namespace DGBModule;
+namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
