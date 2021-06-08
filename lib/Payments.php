@@ -1,6 +1,6 @@
 <?php 
 
-namespace Crypto;
+namespace Payments;
 
 use GuzzleHttp\Client;
 
