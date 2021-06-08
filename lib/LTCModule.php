@@ -8,7 +8,7 @@ class LTCModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://ltc1.trezor.io/api/v1/";
+        $this->explorer_url = "https://ltc.flitswallet.app/api/";
         $this->client = new client();
     }
 
