@@ -66,7 +66,10 @@ class ETHModule{
                 
                     foreach($transaction_info['vout'] as $vout)
                     {
-                        if($vout['value'] == $amount && $vout['scriptPubKey']['addresses'][0] == $address)
+			    
+			$formattedamount = toFixed(($vout['value'] / "1000000000000000000"), 5);
+			    
+                        if($formattedamount == $amount && $vout['addresses'][0] == $address)
                         {
                             return [
                                 'exists' => true,
