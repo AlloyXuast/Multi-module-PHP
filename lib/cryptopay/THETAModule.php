@@ -67,7 +67,7 @@ class THETAModule{
 			
 			                  }
                         
-                        if($formattedamount == $amount && $tokenTransfers[['body']['data']['outputs'][0]['address'] == $address)
+                        if($formattedamount == $amount && $tokenTransfers['body']['data']['outputs'][0]['address'] == $address)
                         {
                             return [
                                 'exists' => true,
