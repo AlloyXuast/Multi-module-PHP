@@ -42,16 +42,24 @@ class ETHModule{
                     
                     foreach($transaction_info['tokenTransfers'] as $tokenTransfers)
                     {
+			    
+			if ($tokenname == "ENJ") {
 
-                        if (toFixed(($tokenTransfers['value'] / "1000000000000000000"), 0) == $amount) {
+                        	if (toFixed(($tokenTransfers['value'] / "1000000000000000000"), 0) == $amount) {
 
-	                        $formattedamount = toFixed(($tokenTransfers['value'] / "1000000000000000000"), 0);
+	                        	$formattedamount = toFixed(($tokenTransfers['value'] / "1000000000000000000"), 0);
 	
-                        } else {
+                        	} else {
 
-	                        $formattedamount = toFixed(($tokenTransfers['value'] / "1000000000000000000"), 5);
+	                        	$formattedamount = toFixed(($tokenTransfers['value'] / "1000000000000000000"), 5);
 	
-                        }
+                        	}
+				
+			} else if ($tokenname == "USDT") {
+			
+				$formattedamount = toFixed(($tokenTransfers['value'] / "1000000"), 4);
+			
+			}
                         
                         if($formattedamount == $amount && $tokenTransfers['symbol'] == $tokenname)
                         {
