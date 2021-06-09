@@ -57,7 +57,15 @@ class ETHModule{
 				
 			} else if ($tokenname == "USDT") {
 			
-				$formattedamount = toFixed(($tokenTransfers['value'] / "1000000"), 4);
+				if (toFixed(($tokenTransfers['value'] / "1000000"), 0) == $amount) {
+
+	                        	$formattedamount = toFixed(($tokenTransfers['value'] / "1000000"), 0);
+	
+                        	} else {
+
+	                        	$formattedamount = toFixed(($tokenTransfers['value'] / "1000000"), 4);
+	
+                        	}
 			
 			}
                         
