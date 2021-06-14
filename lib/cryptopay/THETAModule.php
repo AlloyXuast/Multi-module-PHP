@@ -47,7 +47,7 @@ class THETAModule{
 	
                         	} else {*/
 
-	                        	$formattedamount = toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 2);
+	                        	$formattedamount = toFixed(($vout['valuetheta'] / "1000000000000000000"), 2);
 	
                         	//}
 				
@@ -59,7 +59,7 @@ class THETAModule{
 	
                         	} else {*/
 
-	                        	$formattedamount = toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 2);
+	                        	$formattedamount = toFixed(($vout['valuetfuel'] / "1000000000000000000"), 2);
 	
                         	//}
 			
