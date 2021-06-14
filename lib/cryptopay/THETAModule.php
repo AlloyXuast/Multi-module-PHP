@@ -47,7 +47,7 @@ class THETAModule{
 	
                         	} else {
 
-	                        	$formattedamount = toFixed(($vout[0]['coins']['thetawei'] / "1000000000000000000"), 6);
+	                        	$formattedamount = toFixed(($vout[0]['coins']['thetawei'] / "1000000000000000000"), 2);
 	
                         	}
 				
