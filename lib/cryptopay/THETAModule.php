@@ -41,27 +41,27 @@ class THETAModule{
 	            
 		    if ($tokenname == "THETA") {
 
-                        	if (toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 0) == $amount) {
+                        	/*if (toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 0) == $amount) {
 
 	                        	$formattedamount = toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 0);
 	
-                        	} else {
+                        	} else {*/
 
 	                        	$formattedamount = toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 2);
 	
-                        	}
+                        	//}
 				
 		   } else if ($tokenname == "TFUEL") {
 			
-				if (toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 0) == $amount) {
+				/*if (toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 0) == $amount) {
 
 	                        	$formattedamount = toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 0);
 	
-                        	} else {
+                        	} else {*/
 
 	                        	$formattedamount = toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 2);
 	
-                        	}
+                        	//}
 			
 		    }
 	           		
