@@ -12,14 +12,10 @@ class THETAModule{
         $this->client = new client();
     }
 
-    public function existsTransaction($address, $amount, $timestamp, $tokenname)
+    public function existsTransaction($address, $amount, $timestamp)
     {
         try{
             $transactions = $this->getAddressTransactions($address);
-	    
-	    function toFixed($number, $decimals) {
-               return number_format($number, $decimals, '.', "");
-            }
 		
             foreach($transactions as $transaction)
             {
@@ -37,33 +33,12 @@ class THETAModule{
 
                 foreach($transaction_info['vout'] as $vout)
                 {
+		    
+	           function toFixed($number, $decimals) {
+              		 return number_format($number, $decimals, '.', "");
+                   }
 		
-	            
-		    if ($tokenname == "THETA") {
-
-                        	/*if (toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 0) == $amount) {
-
-	                        	$formattedamount = toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 0);
-	
-                        	} else {*/
-
-	                        	$formattedamount = toFixed(($vout['valuetheta'] / "1000000000000000000"), 2);
-	
-                        	//}
-				
-		   } else if ($tokenname == "TFUEL") {
-			
-				/*if (toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 0) == $amount) {
-
-	                        	$formattedamount = toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 0);
-	
-                        	} else {*/
-
-	                        	$formattedamount = toFixed(($vout['valuetfuel'] / "1000000000000000000"), 2);
-	
-                        	//}
-			
-		    }
+	            $formattedamount = toFixed(($vout['valuetfuel'] / "1000000000000000000"), 2);
 	           		
                     if($formattedamount == $amount && $vout['address'] == $address)
                     {
