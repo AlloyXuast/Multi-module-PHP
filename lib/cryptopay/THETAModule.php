@@ -8,28 +8,25 @@ class THETAModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://explorer.thetatoken.org:8443/api/";
+        $this->explorer_url = "https://api.chisdealhd.co.uk/v1/cryptoproxyexplorer/theta/";
         $this->client = new client();
     }
 
-    //
-    // Look in the explorer if a newer transaction than $timestap in ms (int) with $amount (Float) exists for $address (varchar)
-    //
     public function existsTransaction($address, $amount, $timestamp, $tokenname)
     {
         try{
             $transactions = $this->getAddressTransactions($address);
-
-            function toFixed($number, $decimals) {
+	    
+	    function toFixed($number, $decimals) {
                return number_format($number, $decimals, '.', "");
             }
-            
+		
             foreach($transactions as $transaction)
             {
                 $transaction_info = $this->getTransaction($transaction);
 
                 //allowing only unconfirmed transactions & confirmed transactions newer than $timestamp
-                if($transaction_info['body']['timestamp'] != 0 && $transaction_info['body']['timestamp'] < $timestamp)
+                if($transaction_info['blocktime'] != 0 && $transaction_info['blocktime'] < $timestamp)
                 {
                     //transaction doesn't exist
                     return [
@@ -37,45 +34,44 @@ class THETAModule{
                         'txid' => ""
                     ];
                 }
-                    
-                    foreach($transaction_info['tokenTransfers'] as $tokenTransfers)
-                    {
-			    
-			                if ($tokenname == "THETA") {
 
-                        	if (toFixed(($tokenTransfers['body']['data']['outputs'][0]['coins']['thetawei'] / "1000000000000000000"), 0) == $amount) {
+                foreach($transaction_info['vout'] as $vout)
+                {
+		
+	            
+		    if ($tokenname == "THETA") {
 
-	                        	$formattedamount = toFixed(($tokenTransfers['body']['data']['outputs'][0]['coins']['thetawei'] / "1000000000000000000"), 0);
+                        	if (toFixed(($vout[0]['coins']['thetawei'] / "1000000000000000000"), 0) == $amount) {
+
+	                        	$formattedamount = toFixed(($vout[0]['coins']['thetawei'] / "1000000000000000000"), 0);
 	
                         	} else {
 
-	                        	$formattedamount = toFixed(($tokenTransfers['body']['data']['outputs'][0]['coins']['thetawei'] / "1000000000000000000"), 6);
+	                        	$formattedamount = toFixed(($vout[0]['coins']['thetawei'] / "1000000000000000000"), 6);
 	
                         	}
 				
-			                } else if ($tokenname == "TFUEL") {
+		   } else if ($tokenname == "TFUEL") {
 			
-				                  if (toFixed(($tokenTransfers['body']['data']['outputs'][0]['coins']['tfuelwei'] / "1000000000000000000"), 0) == $amount) {
+				if (toFixed(($vout[0]['coins']['tfuelwei'] / "1000000000000000000"), 0) == $amount) {
 
-	                        	$formattedamount = toFixed(($tokenTransfers['body']['data']['outputs'][0]['coins']['tfuelwei'] / "1000000000000000000"), 0);
+	                        	$formattedamount = toFixed(($vout[0]['coins']['tfuelwei'] / "1000000000000000000"), 0);
 	
                         	} else {
 
-	                        	$formattedamount = toFixed(($tokenTransfers['body']['data']['outputs'][0]['coins']['tfuelwei'] / "1000000000000000000"), 2);
+	                        	$formattedamount = toFixed(($vout[0]['coins']['tfuelwei'] / "1000000000000000000"), 2);
 	
                         	}
 			
-			                  }
-                        
-                        if($formattedamount == $amount && $tokenTransfers['body']['data']['outputs'][0]['address'] == $address)
-                        {
-                            return [
-                                'exists' => true,
-                                'txid' => $transaction
-                            ];
-                        }
+		    }
+	           		
+                    if($formattedamount == $amount && $$vout['body']['data']['outputs'][0]['address'] == $address)
+                    {
+                        return [
+                            'exists' => true,
+                            'txid' => $transaction
+                        ];
                     }
-                    
                 }
             }
 
@@ -107,11 +103,11 @@ class THETAModule{
     public function getAddressTransactions($address)
     {
         try{
-            $addressEndpoint = $this->explorer_url . "accounttx/$address";            
+            $addressEndpoint = $this->explorer_url . "address/$address";            
             $transactions = $this->client->request('GET', $addressEndpoint);
 
             //convert response into array
-            $transactions_array = (json_decode($transactions->getBody()->getContents(), true))['body'];
+            $transactions_array = (json_decode($transactions->getBody()->getContents(), true))['transactions'];
             return $transactions_array;
         }
         catch (\Throwable $e){
@@ -125,7 +121,7 @@ class THETAModule{
     public function getTransaction($txid)
     {
         try{
-            $transactionEndpoint = $this->explorer_url . "transaction/$txid"; 
+            $transactionEndpoint = $this->explorer_url . "tx/$txid"; 
             $transaction = $this->client->request('GET', $transactionEndpoint);
 
             //convert response into array
