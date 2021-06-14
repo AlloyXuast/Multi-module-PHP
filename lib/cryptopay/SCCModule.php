@@ -4,7 +4,7 @@ namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
-class StakecubeModule{
+class SCCModule{
 
     public function __construct()
     {
