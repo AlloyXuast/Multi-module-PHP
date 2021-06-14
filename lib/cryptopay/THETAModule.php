@@ -41,31 +41,31 @@ class THETAModule{
 	            
 		    if ($tokenname == "THETA") {
 
-                        	if (toFixed(($vout[0]['coins']['thetawei'] / "1000000000000000000"), 0) == $amount) {
+                        	if (toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 0) == $amount) {
 
-	                        	$formattedamount = toFixed(($vout[0]['coins']['thetawei'] / "1000000000000000000"), 0);
+	                        	$formattedamount = toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 0);
 	
                         	} else {
 
-	                        	$formattedamount = toFixed(($vout[0]['coins']['thetawei'] / "1000000000000000000"), 2);
+	                        	$formattedamount = toFixed(($vout['coins']['thetawei'] / "1000000000000000000"), 2);
 	
                         	}
 				
 		   } else if ($tokenname == "TFUEL") {
 			
-				if (toFixed(($vout[0]['coins']['tfuelwei'] / "1000000000000000000"), 0) == $amount) {
+				if (toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 0) == $amount) {
 
-	                        	$formattedamount = toFixed(($vout[0]['coins']['tfuelwei'] / "1000000000000000000"), 0);
+	                        	$formattedamount = toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 0);
 	
                         	} else {
 
-	                        	$formattedamount = toFixed(($vout[0]['coins']['tfuelwei'] / "1000000000000000000"), 2);
+	                        	$formattedamount = toFixed(($vout['coins']['tfuelwei'] / "1000000000000000000"), 2);
 	
                         	}
 			
 		    }
 	           		
-                    if($formattedamount == $amount && $vout[0]['address'] == $address)
+                    if($formattedamount == $amount && $vout['address'] == $address)
                     {
                         return [
                             'exists' => true,
