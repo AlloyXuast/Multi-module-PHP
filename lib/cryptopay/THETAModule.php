@@ -65,7 +65,7 @@ class THETAModule{
 			
 		    }
 	           		
-                    if($formattedamount == $amount && $$vout['body']['data']['outputs'][0]['address'] == $address)
+                    if($formattedamount == $amount && $vout[0]['address'] == $address)
                     {
                         return [
                             'exists' => true,
