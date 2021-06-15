@@ -23,14 +23,16 @@ class LTCModule{
             foreach($transactions as $transaction)
             {
                 $transaction_info = $this->getTransaction($transaction);
-
+                $conf = $this->checkConfirmations($transaction);
+                
                 //allowing only unconfirmed transactions & confirmed transactions newer than $timestamp
                 if($transaction_info['blocktime'] != 0 && $transaction_info['blocktime'] < $timestamp)
                 {
                     //transaction doesn't exist
                     return [
                         'exists' => false,
-                        'txid' => ""
+                        'txid' => "",
+                        'conf' => $conf
                     ];
                 }
 
@@ -40,7 +42,8 @@ class LTCModule{
                     {
                         return [
                             'exists' => true,
-                            'txid' => $transaction
+                            'txid' => $transaction,
+                            'conf' => $conf
                         ];
                     }
                 }

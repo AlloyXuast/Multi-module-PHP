@@ -23,14 +23,16 @@ class ZNZModule{
             foreach($transactions as $transaction)
             {
                 $transaction_info = $this->getTransaction($transaction);
-
+                $conf = $this->checkConfirmations($transaction);
+                
                 //allowing only unconfirmed transactions & confirmed transactions newer than $timestamp
                 if($transaction_info['blocktime'] != 0 && $transaction_info['blocktime'] < $timestamp)
                 {
                     //transaction doesn't exist
                     return [
                         'exists' => false,
-                        'txid' => ""
+                        'txid' => "",
+                        'conf' => $conf
                     ];
                 }
 
@@ -38,10 +40,14 @@ class ZNZModule{
                 {
                     if($vout['value'] == $amount && $vout['scriptPubKey']['addresses'][0] == $address)
                     {
-                        return [
-                            'exists' => true,
-                            'txid' => $transaction
-                        ];
+                       
+                       
+                       return [
+                           'exists' => true,
+                           'txid' => $transaction,
+                           'conf' => $conf
+                       ];
+                          
                     }
                 }
             }
