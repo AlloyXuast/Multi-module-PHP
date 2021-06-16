@@ -18,7 +18,9 @@
     },
     "autoload": {
         "psr-4": {
-           "Payments\\Crypto\\": "lib/cryptopay"
+           "Payments\\Crypto\\": "lib/cryptopay",
+           "Payments\\Gaming\\": "lib/gaming",
+           "Payments\\Thirdparty\\": "lib/3rdparty"  
         }
     }
 }
