@@ -15,7 +15,7 @@
 
 namespace Payments\Gaming;
 
-class ARC
+class ArmaRcon
 {
     /**
      * @var array Options for ARC stored in an array
