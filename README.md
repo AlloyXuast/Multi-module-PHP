@@ -49,7 +49,7 @@ $eth = new ETHModule();
 
 //DASH
 use Payments\Crypto\DASHModule;
-$DASH = new DASHModule();
+$dash = new DASHModule();
 
 //FLITS
 use Payments\Crypto\FLSModule;
