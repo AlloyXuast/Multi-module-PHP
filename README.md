@@ -15,4 +15,12 @@ $dogec = new DOGECModule();
 
 var_dump($dogec->existsTransaction('DOGECASHWALLETADDRESS', AMOUNT, CORRENT_TIMESTAMP));
 
+OUTPUTS:
+
+[
+   'exists' => true,
+   'txid' => 'TXIDHERE',
+   'conf' => 5
+]
+
 ```
