@@ -96,7 +96,6 @@ use Payments\Crypto\THETAModule;
 $theta = new THETAModule();
 
 //TRTT
-
 use Payments\Crypto\TRTTModule;
 $trtt = new TRTTModule();
 
