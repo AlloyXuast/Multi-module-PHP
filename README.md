@@ -9,7 +9,7 @@ Example Code:
 
 require_once('vendor/autoload.php');
 
-use Payment\Crypto\DOGECModule;
+use Payments\Crypto\DOGECModule;
 
 $dogec = new DOGECModule();
 
