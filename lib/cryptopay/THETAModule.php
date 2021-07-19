@@ -34,7 +34,7 @@ class THETAModule{
                 foreach($transaction_info['vout'] as $vout)
                 {
 		    
-	                  $formattedamount = number_format(($vout['valuetheta'] / "1.00"), 0, '.', "");
+	                  $formattedamount = $vout['valuetheta'];
 	           		
                     if($formattedamount == $amount && $vout['address'] == strtolower($address))
                     {
