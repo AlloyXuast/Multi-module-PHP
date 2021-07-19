@@ -34,7 +34,7 @@ class TFUELModule{
                 foreach($transaction_info['vout'] as $vout)
                 {
 		    
-	                  $formattedamount = number_format(($vout['valuetfuel'] / "1.00"), 0, '.', "");
+	                  $formattedamount = $vout['valuetfuel'];
 	           		
                     if($formattedamount == $amount && $vout['address'] == strtolower($address))
                     {
