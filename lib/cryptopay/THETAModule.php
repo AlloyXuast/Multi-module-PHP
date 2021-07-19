@@ -34,13 +34,9 @@ class THETAModule{
                 foreach($transaction_info['vout'] as $vout)
                 {
 		    
-	           function toFixed($number, $decimals) {
-              		 return number_format($number, $decimals, '.', "");
-                   }
-		
-	            $formattedamount = toFixed(($vout['valuetfuel'] / "1000000000000000000"), 2);
+	                  $formattedamount = number_format(($vout['valuetheta'] / "1.00"), 0, '.', "");
 	           		
-                    if($formattedamount == $amount && $vout['address'] == $address)
+                    if($formattedamount == $amount && $vout['address'] == strtolower($address))
                     {
                         return [
                             'exists' => true,
