@@ -8,7 +8,7 @@ class DOGECModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://explorer.dogec.io/api/v1/";
+        $this->explorer_url = "https://dogec.flitswallet.app/api/v1/";
         $this->client = new client();
     }
 
