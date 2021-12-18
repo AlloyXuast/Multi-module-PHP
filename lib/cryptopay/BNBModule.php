@@ -37,7 +37,7 @@ class BNBModule{
 		    
 	            $formattedamount = $vout['value'];
 	           		
-                    if($formattedamount == $amount && $vout['address'] == strtolower($address))
+                    if($formattedamount == $amount && $vout['address'] == strtolower($address) && $vout['type'] == "TRANSFER")
                     {
                         return [
                             'exists' => true,
