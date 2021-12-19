@@ -4,7 +4,7 @@ namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
-class BNBModule{
+class WAXModule{
     
     public function __construct()
     {
