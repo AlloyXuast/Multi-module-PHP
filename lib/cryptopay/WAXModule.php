@@ -12,7 +12,7 @@ class BNBModule{
         $this->client = new client();
     }
 
-    public function existsTransaction($address, $amount, $timestamp, $memo)
+    public function existsTransaction($address, $amount, $memo, $timestamp)
     {
         try{
             $transactions = $this->getAddressTransactions($address);
@@ -21,8 +21,8 @@ class BNBModule{
             {
                 $transaction_info = $this->getTransaction($transaction);
 
-                //allowing only unconfirmed transactions & confirmed transactions newer than $timestamp
-                if($transaction_info['blocktime'] != 0 && $transaction_info['blocktime'] < $timestamp)
+               //allowing only unconfirmed transactions & confirmed transactions newer than $timestamp
+                if($transaction_info['blocktime'] != 0 && $transaction_info['blocktime'] > $timestamp)
                 {
                     //transaction doesn't exist
                     return [
@@ -34,9 +34,9 @@ class BNBModule{
                 foreach($transaction_info['vout'] as $vout)
                 {
 		    
-	            $formattedamount = $vout['value'];
+	                  $formattedamount = $vout['value'];
 	           		
-                    if($formattedamount == $amount && $vout['address'] == strtolower($address) && $vout['type'] == "TRANSFER")
+                    if($formattedamount == $amount && $vout['memo'] == $memo && $vout['address'] == strtolower($address))
                     {
                         return [
                             'exists' => true,
