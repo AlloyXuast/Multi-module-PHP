@@ -99,4 +99,36 @@ $theta = new THETAModule();
 use Payments\Crypto\TRTTModule;
 $trtt = new TRTTModule();
 
+//BNB
+use Payments\Crypto\BNBModule;
+$bnb = new BNBModule();
+
+//BLURT
+use Payments\Crypto\BLURTModule;
+$blurt = new BLURTModule();
+
+//ARRR
+use Payments\Crypto\ARRRModule;
+$arrr = new ARRRModule();
+
+//EOS
+use Payments\Crypto\EOSModule;
+$eos = new EOSModule();
+
+//HIVE
+use Payments\Crypto\HIVEModule;
+$hive = new HIVEModule();
+
+//STEEM
+use Payments\Crypto\STEEMModule;
+$steem = new STEEMModule();
+
+//TLOS
+use Payments\Crypto\TLOSModule;
+$tlos = new TLOSModule();
+
+//WAX
+use Payments\Crypto\WAXModule;
+$wax = new WAXModule();
+
 ```
