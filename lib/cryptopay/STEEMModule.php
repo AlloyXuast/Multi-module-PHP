@@ -8,7 +8,7 @@ class STEEMModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://api.chisdealhd.co.uk/v1/cryptoproxyexplorer/steem/";
+        $this->explorer_url = "https://api.chisdealhd.co.uk/v2/crypto/proxyexplorer/steem/";
         $this->client = new client();
     }
 
