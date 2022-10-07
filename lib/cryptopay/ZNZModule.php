@@ -8,7 +8,7 @@ class ZNZModule{
     
     public function __construct()
     {
-        $this->explorer_url = "http://54.36.164.79:9113/api/v1/";
+        $this->explorer_url = "https://znz.flitswallet.app/api/v1/";
         $this->client = new client();
     }
 
