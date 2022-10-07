@@ -8,7 +8,7 @@ class SCCModule{
 
     public function __construct()
     {
-        $this->explorer_url = "http://54.36.164.79:9103/api/";
+        $this->explorer_url = "https://scc.flitswallet.app/api/v1";
         $this->client = new client();
     }
 
