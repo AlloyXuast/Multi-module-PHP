@@ -8,7 +8,7 @@ class EOSModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://api.chisdealhd.co.uk/v1/cryptoproxyexplorer/eos/";
+        $this->explorer_url = "https://api.chisdealhd.co.uk/v2/crypto/proxyexplorer/eos/";
         $this->client = new client();
     }
 
