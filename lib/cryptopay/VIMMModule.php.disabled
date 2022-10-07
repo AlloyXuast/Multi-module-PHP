@@ -8,7 +8,7 @@ class VIMMModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://api.chisdealhd.co.uk/v1/cryptoproxyexplorer/vimm/";
+        $this->explorer_url = "https://api.chisdealhd.co.uk/v2/crypto/proxyexplorer/vimm/";
         $this->client = new client();
     }
 
