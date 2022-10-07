@@ -8,7 +8,7 @@ class DIVIModule{
     
     public function __construct()
     {
-        $this->explorer_url = "http://54.36.164.79:9105/api/v1/";
+        $this->explorer_url = "https://divi.flitswallet.app/api/v1/";
         $this->client = new client();
     }
 
