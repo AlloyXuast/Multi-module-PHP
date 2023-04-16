@@ -20,7 +20,7 @@ class HIVEModule{
             foreach($transactions as $transaction)
             {
                 $transaction_info = $this->getTransaction($address, $transaction);
-		$conf = $this->checkConfirmations($transaction);
+		$conf = $this->checkConfirmations($address, $transaction);
 		
                 //allowing only unconfirmed transactions & confirmed transactions newer than $timestamp
                 if($transaction_info['blocktime'] != 0 && $transaction_info['blocktime'] > $timestamp)
@@ -63,7 +63,7 @@ class HIVEModule{
     public function checkConfirmations($txid)
     {
         try{
-            $transaction = $this->getTransaction($txid);
+            $transaction = $this->getTransaction($address, $transaction);
             $current_block = file_get_contents($this->explorer_url . "getblocks");
 	    $confirmations_num = $current_block - $transaction['blockheight'];        
             if($confirmations_num < 0) {
