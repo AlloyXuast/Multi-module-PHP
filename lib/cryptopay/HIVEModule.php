@@ -60,7 +60,7 @@ class HIVEModule{
     //
     // Check how many confirmations does $txid have (varchar)
     //
-    public function checkConfirmations($txid)
+    public function checkConfirmations($address, $transaction)
     {
         try{
             $transaction = $this->getTransaction($address, $transaction);
