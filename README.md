@@ -131,4 +131,8 @@ $tlos = new TLOSModule();
 use Payments\Crypto\WAXModule;
 $wax = new WAXModule();
 
+//DTC
+use Payments\Crypto\DTCModule;
+$dtc = new DTCModule();
+
 ```
