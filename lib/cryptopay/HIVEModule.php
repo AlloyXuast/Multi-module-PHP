@@ -64,12 +64,7 @@ class HIVEModule{
     {
         try{
             $transaction = $this->getTransaction($address, $transaction);
-            $current_block = file_get_contents($this->explorer_url . "getblocks");
-	    $confirmations_num = $current_block - $transaction['blockheight'];        
-            if($confirmations_num < 0) {
-                $confirmations_num = 0;
-            }
-            return $confirmations_num;
+            return $transaction['confirmations'];
         }
         catch (\Throwable $e){
             throw $e;
