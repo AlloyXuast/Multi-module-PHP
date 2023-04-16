@@ -64,12 +64,7 @@ class DTCModule{
     {
         try{
             $transaction = $this->getTransaction($txid);
-	    $current_block = json_decode(file_get_contents("https://api.avalonblocks.com/count"), true);
-	    $confirmations_num = $current_block['count'] - $transaction['blockheight'];        
-            if($confirmations_num < 0) {
-                $confirmations_num = 0;
-            }
-            return $confirmations_num;
+            return $transaction['confirmations'];
         }
         catch (\Throwable $e){
             throw $e;
