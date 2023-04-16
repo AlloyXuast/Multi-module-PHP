@@ -20,14 +20,16 @@ class HIVEModule{
             foreach($transactions as $transaction)
             {
                 $transaction_info = $this->getTransaction($address, $transaction);
-
+		$conf = $this->checkConfirmations($transaction);
+		
                 //allowing only unconfirmed transactions & confirmed transactions newer than $timestamp
                 if($transaction_info['blocktime'] != 0 && $transaction_info['blocktime'] > $timestamp)
                 {
                     //transaction doesn't exist
                     return [
                         'exists' => false,
-                        'txid' => ""
+                        'txid' => "",
+                        'conf' => $conf
                     ];
                 }
 
@@ -40,7 +42,8 @@ class HIVEModule{
                     {
                         return [
                             'exists' => true,
-                            'txid' => $transaction
+                            'txid' => $transaction,
+                            'conf' => $conf
                         ];
                     }
                 }
@@ -61,7 +64,12 @@ class HIVEModule{
     {
         try{
             $transaction = $this->getTransaction($txid);
-            return $transaction['confirmations'];
+            $current_block = file_get_contents($this->explorer_url . "getblocks");
+	    $confirmations_num = $current_block - $transaction['blockheight'];        
+            if($confirmations_num < 0) {
+                $confirmations_num = 0;
+            }
+            return $confirmations_num;
         }
         catch (\Throwable $e){
             throw $e;
