@@ -64,7 +64,7 @@ class HIVEModule{
     {
         try{
             $transaction = $this->getTransaction($address, $transaction);
-            $current_block = file_get_contents($this->explorer_url . "getblocks");
+            $current_block = file_get_contents("https://api.nekosunevr.co.uk/v3/payments/api/hive/getblocks");
 	    $confirmations_num = $current_block - $transaction['blockheight'];        
             if($confirmations_num < 0) {
                 $confirmations_num = 0;
