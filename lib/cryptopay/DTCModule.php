@@ -4,7 +4,7 @@ namespace Payments\Crypto;
 
 use GuzzleHttp\Client;
 
-class WAXModule{
+class DTCModule{
     
     public function __construct()
     {
