@@ -8,7 +8,7 @@ class TLOSModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://api.chisdealhd.co.uk/v2/crypto/proxyexplorer/telos/";
+        $this->explorer_url = "https://api.nekosunevr.co.uk/v3/payments/api/telos/";
         $this->client = new client();
     }
 
