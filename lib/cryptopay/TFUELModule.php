@@ -8,7 +8,7 @@ class TFUELModule{
     
     public function __construct()
     {
-        $this->explorer_url = "https://api.chisdealhd.co.uk/v2/crypto/proxyexplorer/theta/";
+        $this->explorer_url = "https://api.nekosunevr.co.uk/v3/payments/api/theta/";
         $this->client = new client();
     }
 
