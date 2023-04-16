@@ -20,14 +20,16 @@ class BLURTModule{
             foreach($transactions as $transaction)
             {
                 $transaction_info = $this->getTransaction($address, $transaction);
-
+		$conf = $this->checkConfirmations($address, $transaction);
+		
                 //allowing only unconfirmed transactions & confirmed transactions newer than $timestamp
                 if($transaction_info['blocktime'] != 0 && $transaction_info['blocktime'] > $timestamp)
                 {
                     //transaction doesn't exist
                     return [
                         'exists' => false,
-                        'txid' => ""
+                        'txid' => "",
+                        'conf' => $conf
                     ];
                 }
 
@@ -40,7 +42,8 @@ class BLURTModule{
                     {
                         return [
                             'exists' => true,
-                            'txid' => $transaction
+                            'txid' => $transaction,
+                            'conf' => $conf
                         ];
                     }
                 }
@@ -57,10 +60,10 @@ class BLURTModule{
     //
     // Check how many confirmations does $txid have (varchar)
     //
-    public function checkConfirmations($txid)
+    public function checkConfirmations($address, $transactiond)
     {
         try{
-            $transaction = $this->getTransaction($txid);
+            $transaction = $this->getTransaction($address, $transaction);
             return $transaction['confirmations'];
         }
         catch (\Throwable $e){
